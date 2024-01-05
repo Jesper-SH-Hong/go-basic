@@ -35,6 +35,34 @@ func lenAndUpper2(name string) (length int, uppercase string) {
 	return //return length, uppercase도 가능인데 이미 위에 선언했으니..
 }
 
+
+//go는 for만 loop 가능. forEach 그런 거 하나도 없음.
+func superAdd(numbers ...int) int {
+	//range는 idx, value를 리턴함. _로 idx 무시
+	// for number := range numbers {
+	// 	fmt.Println(number)     이러면 0 ~5 줌
+	// }
+
+	for idx, num := range numbers {
+		fmt.Println( idx, num)
+	}
+
+	//이런 식도 가능하지만.. 위가 나음 ㅎㅎ range 많이 씀.
+	// for i:=0; i < len(numbers); i++ {
+	// 	fmt.Println(numbers[i])
+	// }
+
+	total := 0
+
+	for _, num := range numbers {
+		total += num
+	}
+
+	return total
+	}
+
+
+
 func main() {
 	fmt.Println("Hi")
 	//Go는 함수를 export 하려면 함수명을 대문자로
@@ -66,5 +94,10 @@ func main() {
 	fmt.Println(totalLen2)
 
 	repeatMe("jesper", "cindy", "james", "kelly")
+
+
+
+	sum := superAdd(1, 2, 3, 4, 5, 6)
+	fmt.Println(sum)
 
 }
