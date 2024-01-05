@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/jesper-sh-hong/learngo/mystruct"
+	"github.com/jesper-sh-hong/learngo/pointer"
 	"github.com/jesper-sh-hong/learngo/something"
 )
 
@@ -99,5 +101,9 @@ func main() {
 
 	sum := superAdd(1, 2, 3, 4, 5, 6)
 	fmt.Println(sum)
+
+	pointer.Run()
+
+	mystruct.Run()
 
 }
